@@ -137,7 +137,9 @@ class Dict:
         """
         Метод для поиска данных ключа или самого ключа по содержимому(находит первое вхождение)
         :param data:
+            Данные для поиска
         :param data_key:
+            поиск по ключу или данным ключа
         :return:
         """
         if data_key:
@@ -149,3 +151,13 @@ class Dict:
                 return k
             print('"Данные не найдены"')
             return False
+
+    def print_dict(self):
+        """"
+        Метод для отображения содержимого словаря
+        """
+        if self.my_dict:
+            for k,v in self.my_dict:
+                print(f'{k} - {v}')
+        else:
+            print('Список пуст')
