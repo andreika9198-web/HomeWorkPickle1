@@ -16,6 +16,7 @@ if __name__ == "__main__":
     pickle_5 = Pickler()
     print('Добро пожаловать')
     while True:
+        print()
         navigation = input("""Выберите вариант действий:
 0.Выход
 1.Добавить данные в словарь
@@ -37,7 +38,18 @@ if __name__ == "__main__":
             my_dict.add_dict(user_country,user_capital)
             print(capitals)
         elif navigation == '2':
+            user_country = input('Введите название страны: ').strip().capitalize()
+            my_dict.remove_from_dict(user_country)
+        elif navigation == '3':
+            user_country = input('Введите название страны: ').strip().capitalize()
+            my_search = my_dict.search_dict(user_country)
+            if my_search:
+                print(f"Страна {user_country} - Столица {my_search}")
+        elif navigation == '4':
+            user_capital = input('Введите название столицы: ').strip().capitalize()
+            my_search = my_dict.search_dict(user_capital, False)
+            print(f"Страна {my_search } - Столица {user_capital}")
+        elif navigation == '5':
             pass
-
 
 

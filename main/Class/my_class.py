@@ -91,8 +91,8 @@ class Dict:
         :return:
             удаленные данные или None
         """
-        remove_dict = self.my_dict.pop(data_key)
-        if remove_dict :
+        if data_key in self.my_dict :
+            remove_dict = self.my_dict.pop(data_key)
             print(f'Данные {data_key} : {remove_dict} были успешно удалены')
             return remove_dict
         else:
@@ -147,8 +147,7 @@ class Dict:
         else:
             for k,v in self.my_dict.items():
                 if v == data:
-                    print("Данные найдены")
-                return k
+                    return k
             print('"Данные не найдены"')
             return False
 
