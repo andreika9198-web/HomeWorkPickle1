@@ -131,3 +131,21 @@ class Dict:
                 print('Данные не были найдены')
         else:
             print('Нельзя изменить на существующие данные')
+
+
+    def search_dict(self, data, data_key = True):
+        """
+        Метод для поиска данных ключа или самого ключа по содержимому(находит первое вхождение)
+        :param data:
+        :param data_key:
+        :return:
+        """
+        if data_key:
+            return self.my_dict.get(data, "Данные не найдены")
+        else:
+            for k,v in self.my_dict.items():
+                if v == data:
+                    print("Данные найдены")
+                return k
+            print('"Данные не найдены"')
+            return False
