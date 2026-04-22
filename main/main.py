@@ -27,10 +27,17 @@ if __name__ == "__main__":
 7.Сохранить данные 
 8.Загрузить данные
 9.Отобразить список данных
-""").strip()
+Ваш вариант: """).strip()
+        print()
         if navigation == '0':
             break
         elif navigation == '1':
+            user_country = input('Введите название страны: ').strip().capitalize()
+            user_capital = input('Введите название столицы: ').strip().capitalize()
+            my_dict.add_dict(user_country,user_capital)
+            print(capitals)
+        elif navigation == '2':
+            pass
 
 
 
