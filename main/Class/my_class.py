@@ -108,7 +108,7 @@ class Dict:
             новое данные для ключа
         """
         if data_key in self.my_dict:
-            my_get = self.my_dict.get()
+            my_get = self.my_dict.get(data_key)
             self.my_dict[data_key] = data_new_value
             print(f'Данные были изменены : {my_get}  на {data_new_value} ')
         else:
@@ -122,15 +122,15 @@ class Dict:
         :param data_new_key:
             названия нового ключа
         """
-        if not data_new_key in self.my_dict:
+        if  data_key in self.my_dict:
             remove_dict = self.my_dict.pop(data_key)
-            if remove_dict :
+            if not data_new_key in self.my_dict:
                 self.add_dict(data_new_key, remove_dict)
                 print(f'Данные были изменены : {data_key}  на {data_new_key}')
             else:
-                print('Данные не были найдены')
+                print('Нельзя изменить на не существующие данные')
         else:
-            print('Нельзя изменить на существующие данные')
+            print('Данные не были найдены')
 
 
     def search_dict(self, data, data_key = True):

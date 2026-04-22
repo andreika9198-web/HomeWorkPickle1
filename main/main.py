@@ -7,7 +7,7 @@ if __name__ == "__main__":
         'Италия': 'Рим',
         'Испания': 'Мадрид',
         'Великобритания': 'Лондон',
-        'США': 'Вашингтон',
+        'Сша': 'Вашингтон',
         'Китай': 'Пекин',
         'Япония': 'Токио',
         'Турция': 'Анкара'
@@ -50,6 +50,13 @@ if __name__ == "__main__":
             my_search = my_dict.search_dict(user_capital, False)
             print(f"Страна {my_search } - Столица {user_capital}")
         elif navigation == '5':
-            pass
+            user_country = input('Введите название страны: ').strip().capitalize()
+            user_new_capital = input('Введите название  новой столицы: ').strip().capitalize()
+            my_dict.rename_value(user_country,user_new_capital)
+        elif navigation == '6':
+            user_country = input('Введите название страны: ').strip().capitalize()
+            user_new_country = input('Введите название новой страны: ').strip().capitalize()
+            my_dict.rename_key(user_country,user_new_country)
+            print(capitals)
 
 
