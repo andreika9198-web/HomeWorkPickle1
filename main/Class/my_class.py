@@ -176,7 +176,7 @@ class Dict:
         Метод для отображения содержимого словаря
         """
         if self.my_dict:
-            for k,v in self.my_dict:
+            for k,v in self.my_dict.items():
                 print(f'{k} - {v}')
         else:
             print('Список пуст')
