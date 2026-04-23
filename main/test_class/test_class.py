@@ -45,6 +45,8 @@ def test_05_01_has_feli(pickler_obj):
     assert pickler_obj.has_feli(filename) == False
     filename_1 = r'test_save\save_3.txt'
     assert pickler_obj.has_feli(filename_1) == True
+    filename_2 = r'test_save\save_6.txt'
+    assert pickler_obj.has_feli(filename_2) == False
 
 #Тестировали класс Dict
 def test_06_01_add_dict(dict_obj_filled):
