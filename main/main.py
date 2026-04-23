@@ -14,6 +14,7 @@ if __name__ == "__main__":
     }
     my_dict = Dict(capitals)
     pickle_5 = Pickler()
+    save = ['save_1.txt','save_2.txt','save_3.txt','save_4.txt','save_5.txt',]
     print('Добро пожаловать')
     while True:
         print()
@@ -58,5 +59,19 @@ if __name__ == "__main__":
             user_new_country = input('Введите название новой страны: ').strip().capitalize()
             my_dict.rename_key(user_country,user_new_country)
             print(capitals)
+        elif navigation == '7':
+            my_save_input = input('Выбери слот для сохранения(1-5): ').strip()
+            if f'save_{my_save_input}.txt' in save:
+                my_file = fr'my_save_1/save_{my_save_input}.txt'
+                if  pickle_5.has_feli(my_file):
+                    pickle_5.picle_data_to_file_wb(my_file, capitals)
+                else:
+                    my_new_save = input("Вы хотите перезаписать данные, старые данные будут потерянны (да/нет): ").strip().lower()
+                    if my_new_save == 'да':
+                        pickle_5.picle_data_to_file_wb(my_file, capitals)
+                    else:
+                        print("Данные не были сохранены: ")
+            else:
+                print('Вы выбрали не существующий слот')
 
 

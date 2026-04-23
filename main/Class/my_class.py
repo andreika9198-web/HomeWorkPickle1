@@ -1,3 +1,4 @@
+import os.path
 import pickle
 
 class Pickler:
@@ -60,6 +61,25 @@ class Pickler:
         except Exception as ex:
             print(ex)
             return None
+
+    @classmethod
+    def has_feli(cls, file_path):
+        """
+        Метод для проверки пустой ли файл
+        :param file_path:
+            ссылка на файл
+        :return:
+            True - файл пуст
+            False - файл не пуст
+        """
+        try:
+            if os.path.getsize(file_path) == 0:
+                return True
+            else:
+                return False
+        except FileNotFoundError:
+            return False
+
 
 class Dict:
     """
@@ -128,7 +148,7 @@ class Dict:
                 self.add_dict(data_new_key, remove_dict)
                 print(f'Данные были изменены : {data_key}  на {data_new_key}')
             else:
-                print('Нельзя изменить на не существующие данные')
+                print('Нельзя изменить на  существующие данные')
         else:
             print('Данные не были найдены')
 
