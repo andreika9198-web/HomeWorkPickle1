@@ -91,7 +91,6 @@ if __name__ == "__main__":
                     if my_download == 'да':
                         capitals = pickle_5.picle_data_to_file_rb(my_file)
                         my_dict.my_dict = capitals
-                        print(capitals)
                     else:
                         print('Данные не были загружены')
             else:
