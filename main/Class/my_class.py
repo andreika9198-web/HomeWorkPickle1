@@ -114,7 +114,7 @@ class Dict:
         if data_key in self.my_dict :
             remove_dict = self.my_dict.pop(data_key)
             print(f'Данные {data_key} : {remove_dict} были успешно удалены')
-            return remove_dict
+            return self.my_dict
         else:
             print('Данные не были найдены')
             return None

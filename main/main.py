@@ -40,7 +40,7 @@ if __name__ == "__main__":
             print(capitals)
         elif navigation == '2':
             user_country = input('Введите название страны: ').strip().capitalize()
-            my_dict.remove_from_dict(user_country)
+            capitals = my_dict.remove_from_dict(user_country)
         elif navigation == '3':
             user_country = input('Введите название страны: ').strip().capitalize()
             my_search = my_dict.search_dict(user_country)
@@ -71,6 +71,21 @@ if __name__ == "__main__":
                         pickle_5.picle_data_to_file_wb(my_file, capitals)
                     else:
                         print("Данные не были сохранены: ")
+            else:
+                print('Вы выбрали не существующий слот')
+        elif navigation == '8':
+            download = input('Выбери слот для загрузки(1-5): ').strip()
+            if f'save_{download}.txt' in save:
+                my_file = fr'my_save_1/save_{download}.txt'
+                if  pickle_5.has_feli(my_file):
+                    print(f"В слоте {download} нету сохраненных данных")
+                else:
+                    my_download = input("Вы уверены, что хотите загрузить?, текущий прогресс будет потерян(да/нет): ").strip().lower()
+                    if my_download == 'да':
+                        capitals = pickle_5.picle_data_to_file_rb(my_file)
+                        print(capitals)
+                    else:
+                        print('Данные не были загружены')
             else:
                 print('Вы выбрали не существующий слот')
 
