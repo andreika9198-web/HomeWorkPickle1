@@ -79,3 +79,12 @@ def test_09_01_rename_key(dict_obj_filled):
     assert "test_key_3" not in dict_obj_filled.my_dict
     assert dict_obj_filled.rename_key("test_key_2","test_key_1") == False
     assert dict_obj_filled.rename_key("test_key_4", "test_key_6") == False
+
+def test_09_01_search_dict(dict_obj_filled):
+    """
+    Тестируем поиск данных ключа или самого ключа по содержимому(находит первое вхождение)
+    """
+    assert dict_obj_filled.search_dict("test_key_2") == 'test_value_2'
+    assert dict_obj_filled.search_dict("test_key_5") == 'Данные не найдены'
+    assert dict_obj_filled.search_dict('test_value_2', False) == "test_key_2"
+    assert dict_obj_filled.search_dict('test_value_5', False) == False
