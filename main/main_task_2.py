@@ -38,7 +38,6 @@ if __name__ == "__main__":
             user_country = input('Введите название группы: ').strip().capitalize()
             user_capital = input('Введите название альбома: ').strip().capitalize()
             my_dict.add_dict(user_country,user_capital)
-            print(albums)
 
         elif navigation == '2':
             user_country = input('Введите название группы: ').strip().capitalize()
@@ -90,6 +89,7 @@ if __name__ == "__main__":
                     my_download = input("Вы уверены, что хотите загрузить?, текущий прогресс будет потерян(да/нет): ").strip().lower()
                     if my_download == 'да':
                         albums = pickle_5.picle_data_to_file_rb(my_file)
+                        my_dict.my_dict = albums
                     else:
                         print('Данные не были загружены')
             else:
@@ -99,3 +99,5 @@ if __name__ == "__main__":
             print('Группа - Альбом')
             print('________________')
             my_dict.print_dict()
+        else:
+            print('Ввели не корректные данные')

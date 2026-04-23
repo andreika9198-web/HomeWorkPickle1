@@ -185,7 +185,7 @@ class Dict:
         if self.my_dict:
             for k,v in self.my_dict.items():
                 print(f'{k} - {v}')
-                return True
+            return True
         else:
             print('Список пуст')
             return False
