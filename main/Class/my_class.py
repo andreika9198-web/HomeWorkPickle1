@@ -100,8 +100,10 @@ class Dict:
         if not data_key in self.my_dict:
             self.my_dict.setdefault(data_key, data_value)
             print('Данные успешно добавлены')
+            return True
         else:
             print('Данные с таким значением уже есть')
+            return False
 
     def remove_from_dict(self, data_key):
         """

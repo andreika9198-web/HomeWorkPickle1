@@ -1,4 +1,4 @@
-
+#Тестировали класс Pickler
 def test_01_01_picle_data_wb(pickler_obj):
     """
     Тестируем сохранения данных в байт
@@ -45,3 +45,12 @@ def test_05_01_has_feli(pickler_obj):
     assert pickler_obj.has_feli(filename) == False
     filename_1 = r'test_save\save_3.txt'
     assert pickler_obj.has_feli(filename_1) == True
+
+#Тестировали класс Dict
+def test_06_01_add_dict(dict_obj_filled):
+    """
+    Тестируем добавления новых в словарь
+    """
+    assert dict_obj_filled.add_dict("test_key_4","test_value_4") == True
+    assert "test_key_4" in dict_obj_filled.my_dict
+    assert  dict_obj_filled.add_dict("test_key_4", "test_value_4") == False
