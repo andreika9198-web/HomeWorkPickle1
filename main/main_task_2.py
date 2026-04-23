@@ -1,18 +1,18 @@
 from Class.my_class import  Dict,Pickler
 if __name__ == "__main__":
-    capitals = {
-        'Россия': 'Москва',
-        'Франция': 'Париж',
-        'Германия': 'Берлин',
-        'Италия': 'Рим',
-        'Испания': 'Мадрид',
-        'Великобритания': 'Лондон',
-        'Сша': 'Вашингтон',
-        'Китай': 'Пекин',
-        'Япония': 'Токио',
-        'Турция': 'Анкара'
+    albums = {
+        'The Beatles': 'Abbey Road',
+        'Queen': 'A Night at the Opera',
+        'Nirvana': 'Nevermind',
+        'Pink Floyd': 'The Dark Side of the Moon',
+        'Metallica': 'Metallica (Black Album)',
+        'Michael Jackson': 'Thriller',
+        'ABBA': 'Gold: Greatest Hits',
+        'Led Zeppelin': 'Led Zeppelin IV',
+        'Radiohead': 'OK Computer',
+        'AC/DC': 'Back in Black'
     }
-    my_dict = Dict(capitals)
+    my_dict = Dict(albums)
     pickle_5 = Pickler()
     save = ['save_1.txt','save_2.txt','save_3.txt','save_4.txt','save_5.txt',]
     print('Добро пожаловать')
@@ -38,11 +38,11 @@ if __name__ == "__main__":
             user_country = input('Введите название группы: ').strip().capitalize()
             user_capital = input('Введите название альбома: ').strip().capitalize()
             my_dict.add_dict(user_country,user_capital)
-            print(capitals)
+            print(albums)
 
         elif navigation == '2':
             user_country = input('Введите название группы: ').strip().capitalize()
-            capitals = my_dict.remove_from_dict(user_country)
+            albums = my_dict.remove_from_dict(user_country)
 
         elif navigation == '3':
             user_country = input('Введите название группы: ').strip().capitalize()
@@ -64,18 +64,17 @@ if __name__ == "__main__":
             user_country = input('Введите название группы: ').strip().capitalize()
             user_new_country = input('Введите название новой группы: ').strip().capitalize()
             my_dict.rename_key(user_country,user_new_country)
-            print(capitals)
 
         elif navigation == '7':
             my_save_input = input('Выбери слот для сохранения(1-5): ').strip()
             if f'save_{my_save_input}.txt' in save:
                 my_file = fr'my_save_2/save_{my_save_input}.txt'
                 if  pickle_5.has_feli(my_file):
-                    pickle_5.picle_data_to_file_wb(my_file, capitals)
+                    pickle_5.picle_data_to_file_wb(my_file, albums)
                 else:
                     my_new_save = input("Вы хотите перезаписать данные, старые данные будут потерянны (да/нет): ").strip().lower()
                     if my_new_save == 'да':
-                        pickle_5.picle_data_to_file_wb(my_file, capitals)
+                        pickle_5.picle_data_to_file_wb(my_file, albums)
                     else:
                         print("Данные не были сохранены: ")
             else:
@@ -90,8 +89,7 @@ if __name__ == "__main__":
                 else:
                     my_download = input("Вы уверены, что хотите загрузить?, текущий прогресс будет потерян(да/нет): ").strip().lower()
                     if my_download == 'да':
-                        capitals = pickle_5.picle_data_to_file_rb(my_file)
-                        print(capitals)
+                        albums = pickle_5.picle_data_to_file_rb(my_file)
                     else:
                         print('Данные не были загружены')
             else:
