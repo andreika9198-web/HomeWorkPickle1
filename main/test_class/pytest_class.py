@@ -80,7 +80,7 @@ def test_09_01_rename_key(dict_obj_filled):
     assert dict_obj_filled.rename_key("test_key_2","test_key_1") == False
     assert dict_obj_filled.rename_key("test_key_4", "test_key_6") == False
 
-def test_09_01_search_dict(dict_obj_filled):
+def test_10_01_search_dict(dict_obj_filled):
     """
     Тестируем поиск данных ключа или самого ключа по содержимому(находит первое вхождение)
     """
@@ -88,3 +88,15 @@ def test_09_01_search_dict(dict_obj_filled):
     assert dict_obj_filled.search_dict("test_key_5") == 'Данные не найдены'
     assert dict_obj_filled.search_dict('test_value_2', False) == "test_key_2"
     assert dict_obj_filled.search_dict('test_value_5', False) == False
+
+def test_11_01_print_dict(dict_obj_filled):
+    """
+    Тестируем отображения содержимого словаря
+    """
+    assert dict_obj_filled.print_dict() == True
+
+def test_11_02_print_dict(dict_obj):
+    """
+    Тестируем отображения содержимого словаря(словарь пуст)
+    """
+    assert dict_obj.print_dict() == False
