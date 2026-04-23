@@ -54,3 +54,10 @@ def test_06_01_add_dict(dict_obj_filled):
     assert dict_obj_filled.add_dict("test_key_4","test_value_4") == True
     assert "test_key_4" in dict_obj_filled.my_dict
     assert  dict_obj_filled.add_dict("test_key_4", "test_value_4") == False
+
+def test_07_01_remove_from_dict(dict_obj_filled):
+    """
+    Тестируем удаление данных из словаря
+    """
+    assert dict_obj_filled.remove_from_dict("test_key_3") == {'test_key_1': 'test_value_1', 'test_key_2': 'test_value_2'}
+    assert dict_obj_filled.remove_from_dict("test_key_4") is None

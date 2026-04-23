@@ -111,7 +111,7 @@ class Dict:
         :param data_key:
             данные ключа для удаления из словаря
         :return:
-            удаленные данные или None
+            возвращает словарь или None
         """
         if data_key in self.my_dict :
             remove_dict = self.my_dict.pop(data_key)
