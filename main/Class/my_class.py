@@ -151,10 +151,13 @@ class Dict:
             if not data_new_key in self.my_dict:
                 self.add_dict(data_new_key, remove_dict)
                 print(f'Данные были изменены : {data_key}  на {data_new_key}')
+                return True
             else:
                 print('Нельзя изменить на  существующие данные')
+                return False
         else:
             print('Данные не были найдены')
+            return False
 
 
     def search_dict(self, data, data_key = True):

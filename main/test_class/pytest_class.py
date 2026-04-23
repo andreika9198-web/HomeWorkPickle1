@@ -70,3 +70,12 @@ def test_08_01_rename_value(dict_obj_filled):
     assert "my_test" in dict_obj_filled.my_dict["test_key_3"]
     assert dict_obj_filled.rename_value("test_key_4","my_test") == False
 
+def test_09_01_rename_key(dict_obj_filled):
+    """
+    Тестируем изменения имени ключа
+    """
+    assert dict_obj_filled.rename_key("test_key_3","test_key_5") == True
+    assert "test_key_5"  in dict_obj_filled.my_dict
+    assert "test_key_3" not in dict_obj_filled.my_dict
+    assert dict_obj_filled.rename_key("test_key_2","test_key_1") == False
+    assert dict_obj_filled.rename_key("test_key_4", "test_key_6") == False
