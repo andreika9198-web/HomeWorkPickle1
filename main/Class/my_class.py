@@ -133,8 +133,10 @@ class Dict:
             my_get = self.my_dict.get(data_key)
             self.my_dict[data_key] = data_new_value
             print(f'Данные были изменены : {my_get}  на {data_new_value} ')
+            return True
         else:
             print('Данные не найдены')
+            return False
 
     def rename_key(self, data_key, data_new_key):
         """

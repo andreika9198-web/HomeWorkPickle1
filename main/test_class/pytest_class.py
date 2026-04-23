@@ -61,3 +61,12 @@ def test_07_01_remove_from_dict(dict_obj_filled):
     """
     assert dict_obj_filled.remove_from_dict("test_key_3") == {'test_key_1': 'test_value_1', 'test_key_2': 'test_value_2'}
     assert dict_obj_filled.remove_from_dict("test_key_4") is None
+
+def test_08_01_rename_value(dict_obj_filled):
+    """
+    Тестируем изменения данных по ключу
+    """
+    assert dict_obj_filled.rename_value("test_key_3","my_test") == True
+    assert "my_test" in dict_obj_filled.my_dict["test_key_3"]
+    assert dict_obj_filled.rename_value("test_key_4","my_test") == False
+
